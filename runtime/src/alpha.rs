@@ -1,16 +1,15 @@
 use std::{
     collections::BTreeMap,
     iter::FromIterator,
-    net::{Ipv4Addr, SocketAddr},
+    net::SocketAddr,
     ops::{Deref, DerefMut},
     str::FromStr,
     sync::{Arc, Mutex},
-    time::Duration,
 };
 
 use anyhow::Context;
 use async_trait::async_trait;
-use shuttle_common::{extract_propagation::ExtractPropagationLayer, secrets::Secret};
+use shuttle_common::secrets::Secret;
 use shuttle_proto::runtime::{
     runtime_server::{Runtime, RuntimeServer},
     LoadRequest, LoadResponse, Ping, Pong, StartRequest, StartResponse, StopReason, StopRequest,

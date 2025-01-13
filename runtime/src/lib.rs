@@ -8,9 +8,6 @@
 mod alpha;
 /// Built-in plugins
 mod plugins;
-/// shuttle.dev runtime
-mod rt;
-mod start;
 
 pub use alpha::start;
 
@@ -31,8 +28,6 @@ const VERSION_STRING: &str = concat!(env!("CARGO_PKG_NAME"), " ", env!("CARGO_PK
 // Not part of public API
 #[doc(hidden)]
 pub mod __internals {
-    // Internals used by the codegen
-    pub use crate::start::start;
 
     // Dependencies required by the codegen
     pub use anyhow::Context;
