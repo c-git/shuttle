@@ -59,6 +59,7 @@ pub async fn start(loader: impl Loader + Send + 'static, runner: impl Runner + S
             return;
         }
     };
+    dbg!(args.port);
 
     rt::start(loader, runner).await
 }
