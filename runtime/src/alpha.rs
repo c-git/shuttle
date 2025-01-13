@@ -28,7 +28,6 @@ use crate::__internals::{Loader, Runner};
 
 pub async fn start(runner: impl Runner + Send + 'static) {
     let loader = |_| async { Ok(vec![]) };
-    let addr = SocketAddr::new(Ipv4Addr::LOCALHOST.into(), 0);
 
     let mut server_builder = Server::builder();
 
