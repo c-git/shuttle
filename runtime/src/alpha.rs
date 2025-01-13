@@ -30,7 +30,9 @@ pub async fn start(runner: impl Runner + Send + 'static) {
     let loader = |_| async { Ok(vec![]) };
     let addr = SocketAddr::new(Ipv4Addr::LOCALHOST.into(), 0);
 
-    let mut server_builder: Server = todo!();
+    let mut server_builder = Server::builder()
+        .http2_keepalive_interval(Some(Duration::from_secs(60)))
+        .layer(ExtractPropagationLayer);
 
     let router = {
         let alpha = Alpha::new(loader, runner);
