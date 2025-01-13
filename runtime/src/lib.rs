@@ -12,6 +12,8 @@ mod plugins;
 mod rt;
 mod start;
 
+pub use rt::start;
+
 // Public API
 pub use plugins::{Metadata, Secrets};
 pub use shuttle_codegen::main;
