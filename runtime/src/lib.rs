@@ -12,7 +12,7 @@ mod plugins;
 mod rt;
 mod start;
 
-pub use rt::start;
+pub use start::start;
 
 // Public API
 pub use plugins::{Metadata, Secrets};
