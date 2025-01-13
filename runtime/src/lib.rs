@@ -10,7 +10,7 @@ mod alpha;
 mod plugins;
 pub use tonic;
 
-pub use alpha::{start, Alpha, RuntimeServer};
+pub use alpha::{runtime, start, Alpha, RuntimeServer, State};
 
 // Public API
 pub use plugins::{Metadata, Secrets};
