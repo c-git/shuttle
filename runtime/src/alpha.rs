@@ -26,11 +26,8 @@ use tonic::{transport::Server, Request, Response, Status};
 
 use crate::__internals::{Loader, Runner};
 
-pub async fn start(
-    port: u16,
-    loader: impl Loader + Send + 'static,
-    runner: impl Runner + Send + 'static,
-) {
+pub async fn start(loader: impl Loader + Send + 'static, runner: impl Runner + Send + 'static) {
+    let port = 0;
     // where to serve the gRPC control layer
     let addr = SocketAddr::new(Ipv4Addr::LOCALHOST.into(), port);
 
