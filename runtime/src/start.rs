@@ -48,7 +48,7 @@ impl Args {
     }
 }
 
-pub async fn start(runner: impl Runner + Send + 'static) {
+pub async fn start(loader: impl Loader + Send + 'static, runner: impl Runner + Send + 'static) {
     let args = match Args::parse() {
         Ok(args) => args,
         Err(e) => {
@@ -60,5 +60,9 @@ pub async fn start(runner: impl Runner + Send + 'static) {
         }
     };
 
-    rt::start(|_| async { Ok(vec![]) }, runner).await
+    if args.beta {
+        rt::start(loader, runner).await
+    } else {
+        alpha::start(args.port.unwrap(), loader, runner).await
+    }
 }
