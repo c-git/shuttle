@@ -60,9 +60,5 @@ pub async fn start(loader: impl Loader + Send + 'static, runner: impl Runner + S
         }
     };
 
-    if args.beta {
-        rt::start(loader, runner).await
-    } else {
-        alpha::start(args.port.unwrap(), loader, runner).await
-    }
+    rt::start(loader, runner).await
 }
