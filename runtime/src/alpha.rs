@@ -34,12 +34,10 @@ pub async fn start(runner: impl Runner + Send + 'static) {
         .http2_keepalive_interval(Some(Duration::from_secs(60)))
         .layer(ExtractPropagationLayer);
 
-    let router = {
-        let alpha = Alpha::new(loader, runner);
+    let alpha = Alpha::new(loader, runner);
 
-        let svc = RuntimeServer::new(alpha);
-        server_builder.add_service(svc)
-    };
+    let svc = RuntimeServer::new(alpha);
+    server_builder.add_service(svc);
 }
 
 pub enum State {
