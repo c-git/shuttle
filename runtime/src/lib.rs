@@ -8,8 +8,9 @@
 mod alpha;
 /// Built-in plugins
 mod plugins;
+pub use tonic;
 
-pub use alpha::{runtime_server, start, Alpha, RuntimeServer};
+pub use alpha::{start, Alpha, RuntimeServer};
 
 // Public API
 pub use plugins::{Metadata, Secrets};
