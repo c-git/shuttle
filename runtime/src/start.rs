@@ -49,9 +49,5 @@ impl Args {
 }
 
 pub async fn start(loader: impl Loader + Send + 'static, runner: impl Runner + Send + 'static) {
-    if true {
-        rt::start(loader, runner).await
-    } else {
-        alpha::start(0, loader, runner).await
-    }
+    alpha::start(0, loader, runner).await
 }
