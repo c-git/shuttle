@@ -11,7 +11,7 @@ mod plugins;
 pub use tonic;
 
 pub use __internals::{Loader, Runner};
-pub use alpha::{runtime, start, Alpha, RuntimeServer, State};
+pub use alpha::{runtime, start, Alpha, ReceiverStream, RuntimeServer, State};
 
 // Public API
 pub use plugins::{Metadata, Secrets};

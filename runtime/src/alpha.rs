@@ -10,7 +10,8 @@ use std::{
 use anyhow::Context;
 use async_trait::async_trait;
 use shuttle_common::secrets::Secret;
-pub use shuttle_proto::runtime::{self,
+pub use shuttle_proto::runtime::{
+    self,
     runtime_server::{Runtime, RuntimeServer},
     LoadRequest, LoadResponse, Ping, Pong, StartRequest, StartResponse, StopReason, StopRequest,
     StopResponse, SubscribeStopRequest, SubscribeStopResponse, VersionInfo,
@@ -20,7 +21,7 @@ use tokio::sync::{
     broadcast::{self, Sender},
     mpsc, oneshot,
 };
-use tokio_stream::wrappers::ReceiverStream;
+pub use tokio_stream::wrappers::ReceiverStream;
 use tonic::{transport::Server, Request, Response, Status};
 
 use crate::__internals::{Loader, Runner};
