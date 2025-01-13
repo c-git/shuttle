@@ -10,7 +10,7 @@ use std::{
 use anyhow::Context;
 use async_trait::async_trait;
 use shuttle_common::secrets::Secret;
-use shuttle_proto::runtime::{
+pub use shuttle_proto::runtime::{
     runtime_server::{Runtime, RuntimeServer},
     LoadRequest, LoadResponse, Ping, Pong, StartRequest, StartResponse, StopReason, StopRequest,
     StopResponse, SubscribeStopRequest, SubscribeStopResponse, VersionInfo,

@@ -9,7 +9,7 @@ mod alpha;
 /// Built-in plugins
 mod plugins;
 
-pub use alpha::start;
+pub use alpha::{start, Alpha, RuntimeServer};
 
 // Public API
 pub use plugins::{Metadata, Secrets};
