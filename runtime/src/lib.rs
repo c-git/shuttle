@@ -8,10 +8,10 @@
 mod alpha;
 /// Built-in plugins
 mod plugins;
-pub use tonic;
-
 pub use __internals::{Loader, Runner};
 pub use alpha::{runtime, start, Alpha, ReceiverStream, RuntimeServer, State};
+pub use hyper::http;
+pub use tonic;
 
 // Public API
 pub use plugins::{Metadata, Secrets};
