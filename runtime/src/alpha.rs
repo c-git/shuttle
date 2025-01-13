@@ -40,8 +40,6 @@ pub async fn start(runner: impl Runner + Send + 'static) {
         let svc = RuntimeServer::new(alpha);
         server_builder.add_service(svc)
     };
-
-    router.serve(addr).await.unwrap();
 }
 
 pub enum State {
