@@ -28,9 +28,7 @@ use crate::__internals::{Loader, Runner};
 
 pub async fn start(runner: impl Runner + Send + 'static) {
     let loader = |_| async { Ok(vec![]) };
-    let port = 0;
-    // where to serve the gRPC control layer
-    let addr = SocketAddr::new(Ipv4Addr::LOCALHOST.into(), port);
+    let addr = SocketAddr::new(Ipv4Addr::LOCALHOST.into(), 0);
 
     let mut server_builder = Server::builder()
         .http2_keepalive_interval(Some(Duration::from_secs(60)))
