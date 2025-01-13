@@ -41,10 +41,7 @@ pub async fn start(runner: impl Runner + Send + 'static) {
         server_builder.add_service(svc)
     };
 
-    match router.serve(addr).await {
-        Ok(_) => println!("router completed on its own"),
-        Err(e) => panic!("Error while serving address {addr}: {e}"),
-    }
+    router.serve(addr).await.unwrap();
 }
 
 pub enum State {
