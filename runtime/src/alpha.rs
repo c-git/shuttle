@@ -37,7 +37,6 @@ pub async fn start(runner: impl Runner + Send + 'static) {
     let alpha = Alpha::new(loader, runner);
 
     let svc = RuntimeServer::new(alpha);
-    server_builder.add_service(svc);
 }
 
 pub enum State {
