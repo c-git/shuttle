@@ -11,7 +11,7 @@ use anyhow::Context;
 use async_trait::async_trait;
 use shuttle_common::secrets::Secret;
 pub use shuttle_proto::runtime::{
-    runtime_server::{Runtime, RuntimeServer},
+    runtime_server::{Runtime, RuntimeServer,self},
     LoadRequest, LoadResponse, Ping, Pong, StartRequest, StartResponse, StopReason, StopRequest,
     StopResponse, SubscribeStopRequest, SubscribeStopResponse, VersionInfo,
 };
